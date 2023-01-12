@@ -1,38 +1,127 @@
 .App {
   text-align: center;
+  height: 100vh;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.background {
+  background-image: url("./pattern2.jpg");
+  background-size: cover;
+  background-repeat: repeat;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.pageBorder{
+  padding:10px
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.cardInfo {
+  width: 300px;
+  margin-block: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-color: aliceblue;
+  border: 5px solid rgb(80, 221, 205);
+  box-shadow: 0 0 5px #ccc;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+}
+.cardInfo button{
+  background-color: red;
+  color: rgb(255, 255, 255);
+  font-weight: 800;
+}
+.cardContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.cardContainer button {
+  align-self: flex-end;
+  margin: 5px;
+}
+.cardInfo img {
+  width: 100%;
+}
+.cardInfo .name {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.charInfo {
+  display: flex;
+}
+.charInfo p {
+  display: flex;
+  margin: 0 30px 8px 30px;
+}
+.cardImg {
+  position: relative;
+}
+/*  position: absolute;
+  top: 270px;
+  left: 10px;
+*/
+.cardImg p {
+  /*  position: absolute;
+  top: 270px;
+  left: 10px;
+*/
+  padding-inline: 5px;
+  color: aliceblue;
+  font-weight: 700;
+  position: absolute;
+  top: 85%;
+  left: 2%;
+}
+/* Ahora trabajaremos en las otras cartas*/
+.otherCards {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+/* Ahora debajo de las cartas*/
+.searchBar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.searchBar input,
+button {
+  height: 30px;
+  margin-inline:30px;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+}
+.searchBar button{
+  background-color:#54e154;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+}
+/*Ahora trabajaremos con el navbar*/
+.nav{
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(1, 51, 80, 0.5);
+  margin-bottom: 25px;
+}
+  
+.navSearch{
+  flex-wrap: nowrap;
+    margin:10px;
+}
+.nav div{
+  min-width: 140px;
+  min-height: 50px;
+  
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+/* Ahora trabajaremos con el responsive:*/
+@media (max-width: 1000px) {
+  .otherCards {
+    display: block;
   }
 }
