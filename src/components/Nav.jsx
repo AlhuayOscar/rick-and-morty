@@ -1,6 +1,6 @@
 import SearchBar from "./SearchBar";
 
-export default function Nav() {
+export default function Nav({onSearch}) {
 
   return (
     <div className="nav">
@@ -8,7 +8,7 @@ export default function Nav() {
       <div></div>
       <div></div>
       <div className="navSearch">
-        <SearchBar onSearch={(characterID) => alert(characterID)} />
+        <SearchBar onSearch={onSearch} />
       </div>
     </div>
   );

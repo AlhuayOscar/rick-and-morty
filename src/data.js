@@ -31,3 +31,4 @@ export const Rick = {
 };
 
 export default characters;
+

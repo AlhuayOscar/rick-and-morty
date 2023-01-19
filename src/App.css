@@ -1,14 +1,15 @@
+#root {
+  background: url("pattern2.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh;
+}
 .App {
   text-align: center;
-  height: 100vh;
 }
-.background {
-  background-image: url("./pattern2.jpg");
-  background-size: cover;
-  background-repeat: repeat;
-}
-.pageBorder{
-  padding:10px
+
+.pageBorder {
+  padding: 10px;
 }
 .cardInfo {
   width: 300px;
@@ -26,7 +27,7 @@
   -ms-border-radius: 6px;
   -o-border-radius: 6px;
 }
-.cardInfo button{
+.cardInfo button {
   background-color: red;
   color: rgb(255, 255, 255);
   font-weight: 800;
@@ -36,6 +37,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding-right: 45px;
 }
 .cardContainer button {
   align-self: flex-end;
@@ -49,6 +51,7 @@
 }
 .charInfo {
   display: flex;
+  flex: 1 0 auto; /* <article> */
 }
 .charInfo p {
   display: flex;
@@ -76,8 +79,8 @@
 /* Ahora trabajaremos en las otras cartas*/
 .otherCards {
   display: flex;
-  flex-wrap: nowrap;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content:flex-start;
 }
 /* Ahora debajo de las cartas*/
 .searchBar {
@@ -88,35 +91,34 @@
 .searchBar input,
 button {
   height: 30px;
-  margin-inline:30px;
+  margin-inline: 30px;
   border-radius: 6px;
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
   -ms-border-radius: 6px;
   -o-border-radius: 6px;
 }
-.searchBar button{
-  background-color:#54e154;
+.searchBar button {
+  background-color: #54e154;
   font-weight: 600;
   color: #fff;
   cursor: pointer;
 }
 /*Ahora trabajaremos con el navbar*/
-.nav{
+.nav {
   display: flex;
   justify-content: space-between;
   background-color: rgba(1, 51, 80, 0.5);
   margin-bottom: 25px;
 }
-  
-.navSearch{
+
+.navSearch {
   flex-wrap: nowrap;
-    margin:10px;
+  margin: 10px;
 }
-.nav div{
+.nav div {
   min-width: 140px;
   min-height: 50px;
-  
 }
 
 /* Ahora trabajaremos con el responsive:*/

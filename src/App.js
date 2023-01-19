@@ -4,26 +4,33 @@ import { useState } from "react";
 import Nav from "./components/Nav";
 
 function App() {
-  const [characters, setCharacters] = useState([
-    {
-      name: "Morty Smith",
-      species: "Human",
-      gender: "Male",
-      image: "https://rickandmortyapi.com/api/character/avatar/2.jpeg",
-    },
-  ]);
-  
+  const [characters, setCharacters] = useState([]);
+
+  const onSearch = (character) => {
+    fetch(`https://rickandmortyapi.com/api/character/${character}`)
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.name) {
+          setCharacters((oldChars) => [...oldChars, data]);
+        } else {
+          window.alert("No hay personajes con ese ID");
+        }
+      });
+  };
+
+  const onClose = (id) => {
+    setCharacters(characters.filter((character) => character.id !== id));
+  };
+
   return (
-    <div className="background">
+    <div>
       <div className="App" style={{ padding: "25px" }}>
         <section id="navbar">
-          <Nav />
+          <Nav onSearch={onSearch} />
           <hr />
         </section>
         <section id="moreCards">
-          <div>
-            <Cards characters={characters} />
-          </div>
+          <Cards onClose={onClose} characters={characters} />
           <hr />
         </section>
       </div>
